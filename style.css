@@ -1,0 +1,25 @@
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  #password-form {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  #password-input {
+    width: 200px;
+    padding: 10px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    margin-top: 10px;
+  }
+  
