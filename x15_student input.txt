@@ -1,0 +1,97 @@
+//student input data using class in cpp
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Student {
+private:
+    string name;
+    int age;
+    string gender;
+    string bankAccountNumber;
+    string contactNumber;
+    string emailId;
+
+public:
+    void setName(string studentName) {
+        name = studentName;
+    }
+
+    void setAge(int studentAge) {
+        age = studentAge;
+    }
+
+    void setGender(string studentGender) {
+        gender = studentGender;
+    }
+
+    void setBankAccountNumber(string accountNumber) {
+        bankAccountNumber = accountNumber;
+    }
+
+    void setContactNumber(string contact) {
+        contactNumber = contact;
+    }
+
+    void setEmailId(string email) {
+        emailId = email;
+    }
+
+    string getName() {
+        return name;
+    }
+
+    int getAge() {
+        return age;
+    }
+
+    void getOtherDetails() {
+        cout << "Gender: " << gender << endl;
+        cout << "Bank Account Number: " << bankAccountNumber << endl;
+        cout << "Contact Number: " << contactNumber << endl;
+        cout << "Email-ID: " << emailId << endl;
+    }
+};
+
+int main() {
+    Student student;
+
+    // Get student details from user
+    string name, gender, bankAccountNumber, contactNumber, emailId;
+    int age;
+
+    cout << "Enter Name: ";
+    getline(cin, name);
+
+    cout << "Enter Age: ";
+    cin >> age;
+    cin.ignore(); // Ignore the newline character left in the input buffer
+
+    cout << "Enter Gender: ";
+    getline(cin, gender);
+
+    cout << "Enter Bank Account Number: ";
+    getline(cin, bankAccountNumber);
+
+    cout << "Enter Contact Number: ";
+    getline(cin, contactNumber);
+
+    cout << "Enter Email-ID: ";
+    getline(cin, emailId);
+
+    // Set student details
+    student.setName(name);
+    student.setAge(age);
+    student.setGender(gender);
+    student.setBankAccountNumber(bankAccountNumber);
+    student.setContactNumber(contactNumber);
+    student.setEmailId(emailId);
+
+    // Display student details
+    cout << "\nStudent Details:\n";
+    cout << "Name: " << student.getName() << endl;
+    cout << "Age: " << student.getAge() << endl;
+    student.getOtherDetails();
+
+    return 0;
+}

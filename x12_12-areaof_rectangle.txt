@@ -1,0 +1,27 @@
+//area of rectangle using class in cpp
+#include<iostream>
+using namespace std;
+
+class rec{
+private:
+    double len,bre;
+public:
+    double area(double len,double bre){
+    return len*bre;
+    }
+
+}op;
+
+int main(){
+
+double x,y;
+cout<<"Enter length for the rectangle: ";
+cin>>x;
+cout<<"Enter breath for the rectangle: ";
+cin>>y;
+
+double res = op.area(x,y);
+cout<<"The area of rectangle is: "<<res<<endl;
+
+return 0;
+}

@@ -1,0 +1,121 @@
+//Write a program in Cpp to print prime numbers from 1 to 20.
+#include<iostream>
+
+using namespace std;
+
+int main(){
+
+int x,y, flag = 0;
+
+for (int x = 2; x <= 20; x++)
+{
+    flag = 0;
+    for (int y = 2; y < x; y++)
+    {
+        if (x%y==0)
+        {
+            flag++;
+            break;
+        }
+        
+    }
+    if (flag==0)
+    {
+        cout<<x<<endl;
+    }
+    
+}
+
+
+
+
+}
+
+
+// write a program in cpp to print prime number upto n.
+/*
+#include <iostream>
+using namespace std;
+
+bool isPrime(int num) {
+    if (num <= 1) {
+        return false;
+    }
+
+    for (int i = 2; i * i <= num; i++) {
+        if (num % i == 0) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+void printPrimeNumbers(int n) {
+    cout << "Prime numbers up to " << n << ":\n";
+
+    for (int i = 2; i <= n; i++) {
+        if (isPrime(i)) {
+            cout << i << " ";
+        }
+    }
+
+    cout << "\n";
+}
+
+int main() {
+    int num;
+    cout << "Enter a number: ";
+    cin >> num;
+
+    printPrimeNumbers(num);
+
+    return 0;
+}
+
+*/
+
+//user input minimum and max user to find prime
+/*
+#include <iostream>
+
+using namespace std;
+
+bool isPrime(int num) {
+    if (num <= 1)
+        return false;
+
+    for (int i = 2; i <= num / 2; ++i) {
+        if (num % i == 0)
+            return false;
+    }
+
+    return true;
+}
+
+void printPrimes(int minNum, int maxNum) {
+    cout << "Prime numbers between " << minNum << " and " << maxNum << ":" << endl;
+
+    for (int num = minNum; num <= maxNum; ++num) {
+        if (isPrime(num))
+            cout << num << " ";
+    }
+
+    cout << endl;
+}
+
+int main() {
+    int minNum, maxNum;
+
+    cout << "Enter the minimum number: ";
+    cin >> minNum;
+
+    cout << "Enter the maximum number: ";
+    cin >> maxNum;
+
+    printPrimes(minNum, maxNum);
+
+    return 0;
+}
+
+*/

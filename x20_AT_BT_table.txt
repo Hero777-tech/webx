@@ -1,0 +1,53 @@
+//AT BT WT TAT table form
+#include <iostream>
+using namespace std;
+
+struct fcfs {
+    char process_id;
+    int AT, BT, CT, TAT, WT;
+};
+
+int main() {
+    int n;
+    float totalTAT = 0, totalWT = 0, avgTAT = 0, avgWT = 0;
+
+    cout << "Enter the number of processes: ";
+    cin >> n;
+
+    fcfs sr[n];
+
+    for (int i = 0; i < n; i++) {
+        cout << "---Enter data for process " << i + 1 << "---\n";
+        cin >> sr[i].process_id;
+        cout << "Enter AT: ";
+        cin >> sr[i].AT;
+        cout << "Enter BT: ";
+        cin >> sr[i].BT;
+    }
+
+    cout << "\n----Data with CT, TAT, and WT----\n";
+    cout << "Serial number\tProcess ID\tAT\tBT\tCT\tTAT\tWT" << endl;
+
+    for (int i = 0; i < n; i++) {
+        if (i == 0)
+            sr[i].CT = sr[i].AT + sr[i].BT;
+        else
+            sr[i].CT = max(sr[i - 1].CT + sr[i].BT, sr[i].AT + sr[i].BT);
+
+        sr[i].TAT = sr[i].CT - sr[i].AT;
+        sr[i].WT = sr[i].TAT - sr[i].BT;
+
+        cout << " " << i + 1 << "\t\t" << sr[i].process_id << "\t\t" << sr[i].AT << "\t" << sr[i].BT << "\t" << sr[i].CT << "\t" << sr[i].TAT << "\t" << sr[i].WT << endl;
+
+        totalTAT += sr[i].TAT;
+        totalWT += sr[i].WT;
+    }
+
+    avgTAT = totalTAT / n;
+    avgWT = totalWT / n;
+
+    cout << "\nAverage TAT: " << avgTAT << endl;
+    cout << "Average WT: " << avgWT << endl;
+
+    return 0;
+}

@@ -1,0 +1,33 @@
+// cpp program to find cercumference of a circle using class.
+#include <iostream>
+using namespace std;
+
+class crl
+{
+    double radius;
+    float pie = 3.14;
+
+public:
+    void setradii(double r)
+    {
+        radius = r;
+    }
+    double cal()
+    {
+        return 2 * pie * radius;
+    }
+} c1;
+
+int main()
+{
+    int x;
+    cout << "Enter radius of the circle: ";
+    cin >> x;
+
+    c1.setradii(x);
+
+    double res = c1.cal();
+    cout << "The area of cirlce is: " << res;
+
+    return 0;
+}

@@ -1,0 +1,43 @@
+//sparse matrix
+#include<iostream>
+using namespace std;
+
+int main(){
+    int r,c,count=0;
+    cout<<"Enter number of rows: ";
+    cin>>r;
+    cout<<"Enter number of columns: ";
+    cin>>c;
+    int mat[r][c];
+    cout<<"The sparse matrix----\n"<<"number of zero must be more than non-zero values-----\n";
+    for (int i = 0; i < r; i++)
+    {
+        for (int j = 0; j < c; j++)
+        {
+            cin>>mat[i][j];
+            if (mat[i][j]==0)
+            {
+                count++;
+            }
+            
+        }    
+    }
+    if (count>(r*c)/2){
+        cout<<"---Sparse matrix will be: -----\n";
+        for (int i = 0; i < r; i++)
+        {
+            for (int j = 0; j < c; j++)
+            {
+                cout<<mat[i][j]<<" ";
+                
+            }
+            cout<<endl;
+        }
+        
+    }
+    else{
+        cout<<"It is not a sparse matrix!\n";
+        exit(1);
+    }
+    return 0;
+}

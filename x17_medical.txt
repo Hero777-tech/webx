@@ -1,0 +1,92 @@
+//cpp class of medical bill
+#include <iostream>
+using namespace std;
+
+class medicalBill {
+public:
+    string patientName;
+    int patientAge, noOfDays;
+    char patientType, patientGender;
+    float medicineCharge, serviceCharge, consultationFee, perDayBedCharge;
+
+    void printInvoice() {
+        float total, discount = 0, gst = 18;
+        cout << "Patient details:" << endl;
+        cout << "    Name: " << patientName << endl;
+        cout << "    Age: " << patientAge << endl;
+        cout << "    Gender: " << patientGender << endl;
+        if (patientType == 'I')
+            cout << "    Type: Indoor" << endl;
+        else
+            cout << "    Type: Outdoor" << endl;
+
+        cout << "\nProduct                 Cost      Quantity    Price" << endl;
+        cout << "----------------------------------------------------" << endl;
+
+        if (patientType == 'I') {
+            cout << "Bed charge per day       " << perDayBedCharge << "        " << noOfDays << "          " << noOfDays * perDayBedCharge << endl;
+            cout << "Consultation fees        " << consultationFee << "        1          " << consultationFee << endl;
+            cout << "Medicine charge          " << medicineCharge << "        1          " << medicineCharge << endl;
+            cout << "Service charge           " << serviceCharge << "        1          " << serviceCharge << endl;
+            total = noOfDays * perDayBedCharge + consultationFee + medicineCharge + serviceCharge;
+        }
+        else if (patientType == 'O') {
+            cout << "Consultation fees        " << consultationFee << "        1          " << consultationFee << endl;
+            cout << "Medicine charge          " << medicineCharge << "        1          " << medicineCharge << endl;
+            total = consultationFee + medicineCharge;
+        }
+
+        cout << "\nTotal:                    " << total << endl;
+
+        if (patientGender == 'M' && patientAge >= 60)
+            discount = 5;
+        if (patientGender == 'F' && patientAge >= 50)
+            discount = 8;
+
+        if (discount > 0) {
+            float discountAmount = discount * total / 100.0;
+            cout << discount << "% discount:            -" << discountAmount << endl;
+            total -= discountAmount;
+        }
+        if (gst > 0) {
+            float gstAmount = gst * total / 100.0;
+            cout << gst << "% gst:                 +" << gstAmount << endl;
+            total += gstAmount;
+        }
+
+        cout << "\nAmount Payable:          " << total << endl;
+    }
+};
+
+int main() {
+    medicalBill m1;
+
+    cout << "Enter Patient details:" << endl;
+    cout << "    Name: ";
+    cin >> m1.patientName;
+    cout << "    Age: ";
+    cin >> m1.patientAge;
+    cout << "    Gender: ";
+    cin >> m1.patientGender;
+    cout << "    Type (I for indoor or O for outdoor): ";
+    cin >> m1.patientType;
+
+    cout << "\nEnter hospital admission details:" << endl;
+    if (m1.patientType == 'I') {
+        cout << "    Number of days admitted: ";
+        cin >> m1.noOfDays;
+        cout << "    Per day bed charge: ";
+        cin >> m1.perDayBedCharge;
+        cout << "    Service charge: ";
+        cin >> m1.serviceCharge;
+    }
+    cout << "    Consultation fees: ";
+    cin >> m1.consultationFee;
+    cout << "    Medicine charge: ";
+    cin >> m1.medicineCharge;
+
+    system("cls");
+    m1.printInvoice();
+
+    return 0;
+}

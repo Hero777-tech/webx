@@ -1,0 +1,67 @@
+//Transpose of matrix.
+#include<iostream>
+using namespace std;
+
+void trnx(int matrix[][100],int row,int col){
+    int trnx[100][100];
+
+    for (int i = 0; i < col; i++)
+    {
+        for (int j = 0; j < row; j++)
+        {
+            trnx[i][j]=matrix[j][i];
+        }
+        
+    }
+
+    cout<<"Transpose of matrix ================================="<<endl;
+    for (int i = 0; i < row; i++)
+    {
+        for (int j = 0; j < col; j++)
+        {
+            cout<<trnx[i][j]<<" ";
+        }
+        cout<<endl;
+        
+    }
+    
+    
+}
+
+int main(){
+    int row , col;
+    cout<<"Enter row you want: ";
+    cin>>row;
+    cout<<"Enter col you want: ";
+    cin>>col;
+
+    int matrix[100][100];
+
+    for (int i = 0; i < row; i++)
+    {
+        for (int j = 0; j < col; j++)
+        {
+            cout<<"Enter the matrix for the position ["<<i<<"] and ["<<j<<"] :";
+            cin>>matrix[i][j];
+        }
+        
+    }
+
+    //output
+    cout<<"Original Matrix"<<endl;
+    for (int i = 0; i < row; i++)
+    {
+        for (int j = 0; j < col; j++)
+        {
+            cout<<matrix[i][j]<< " ";
+        }
+        cout<<endl;
+    }
+    
+
+   trnx(matrix,row,col);
+
+
+
+    return 0;
+}

@@ -1,0 +1,48 @@
+// write a number is cpp to reverse a number?
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int n;
+    cout << "Enter the number you want to reverse: ";
+    cin >> n;
+
+    int ck = 0;
+
+    while (n != 0)
+    {
+        int dig = n % 10;
+        ck = (ck * 10) + dig;
+        n /= 10;
+    }
+    cout<<ck;
+
+    return 0;
+}
+//version 2
+/*
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int n;
+    cout << "Enter the number you want to reverse: ";
+    cin >> n;
+
+    int reversedNumber = 0;
+
+    while (n != 0)
+    {
+        int digit = n % 10;
+        reversedNumber = (reversedNumber * 10) + digit;
+        n /= 10;
+    }
+    
+    cout << "Reversed number: " << reversedNumber << endl;
+
+    return 0;
+}
+
+*/

@@ -1,0 +1,28 @@
+//fibonacci using recursion in cpp
+#include<iostream>
+using namespace std;
+
+int fxxr(int n){
+    if (n<=1)
+    {
+        return n;
+    }
+    return fxxr(n-1)+fxxr(n-2);
+    
+}
+
+int main(){
+    int x;
+    cout<<"Enter a number: ";
+    cin>>x;
+
+    cout<<"------Fibonacci--------"<<endl;
+    for (int i = 0; i < x; i++)
+    {
+        cout<<fxxr(i)<<" ";
+    }
+    
+
+
+    return 0;
+}

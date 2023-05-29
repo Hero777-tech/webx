@@ -1,0 +1,83 @@
+// program in cpp to find area of triangle using class.
+#include <iostream>
+using namespace std;
+
+/// @brief 
+/// @brief 
+/// @brief 
+class trx
+{
+    double base;
+    double height;
+
+public:
+    void setbase(int b)
+    {
+        base = b;
+    }
+    void setheight(int h)
+    {
+        height = h;
+    }
+    double calx()
+    {
+        return 0.5 * base * height;
+    }
+} t1;
+
+int main()
+{
+    int base, height;
+    cout << "Enter base of the tringle: ";
+    cin >> base;
+    cout << "Enter height of the tringle: ";
+    cin >> height;
+
+    t1.setbase(base);
+    t1.setheight(height);
+
+    double result = t1.calx();
+    cout << "The area of the tringle: " << result << endl;
+
+    return 0;
+}
+/*
+#include <iostream>
+
+using namespace std;
+
+class Triangle {
+private:
+    double base;
+    double height;
+
+public:
+    Triangle(double b, double h) {
+        base = b;
+        height = h;
+    }
+
+    double calculateArea() {
+        return 0.5 * base * height;
+    }
+};
+
+int main() {
+    double base, height;
+
+    cout << "Enter the base of the triangle: ";
+    cin >> base;
+
+    cout << "Enter the height of the triangle: ";
+    cin >> height;
+
+    Triangle triangle(base, height);
+
+    double area = triangle.calculateArea();
+
+    cout << "The area of the triangle is: " << area << endl;
+
+    return 0;
+}
+
+*/

@@ -1,0 +1,33 @@
+//factorial of a number using recursion.
+#include <iostream>
+using namespace std;
+
+unsigned long long tst(int n)
+{
+    if (n == 0)
+    {
+        return 1;
+    }
+    else
+    {
+        return n * tst(n - 1);
+    }
+}
+
+int main()
+{
+    int x;
+    cout<<"Enter a number: ";
+    cin>>x;
+
+    if (x<0)
+    {
+        cout<<"Enter a positive integer"<<endl;
+        return main();
+    }
+    
+    int res = tst(x);
+    cout<<"Factorial of "<<x<<" is: "<<res<<endl;
+
+    return 0;
+}

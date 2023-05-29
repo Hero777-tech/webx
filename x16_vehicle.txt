@@ -1,0 +1,63 @@
+//vehicle in cpp classes
+#include <iostream>
+
+using namespace std;
+
+class vehicle {
+    public:
+    string company, model;
+    int topSpeed, currentSpeed, acceleration=5, decceleration=3;
+    unsigned long long price;
+
+    void accelerate() {
+        currentSpeed+=5;
+        if (currentSpeed > topSpeed)
+            currentSpeed=topSpeed;
+    }
+
+    void deccelerate() {
+        currentSpeed-=3;
+        if (currentSpeed < 0)
+            currentSpeed=0;
+    }
+};
+
+int main()
+{
+    class vehicle v1;
+    cout << "Enter vehicle's company: ";
+    cin >> v1.company;
+    cout << "Enter vehicle's model: ";
+    cin >> v1.model;
+    cout << "Enter vehicle's topspeed: ";
+    cin >> v1.topSpeed;
+    cout << "Enter vehicle's current speed: ";
+    cin >> v1.currentSpeed;
+    cout << "Enter vehicle's price: ";
+    cin >> v1.price;
+
+
+    while(1) {
+        int choice;
+        system("cls");
+        cout << "Vehicle state:" << endl;
+        cout << "\t Company: " << v1.company << endl;
+        cout << "\t Model: " << v1.model << endl;
+        cout << "\t Price: " << v1.price << endl;
+        cout << "\t Top speed: " << v1.topSpeed << endl;
+        cout << "\t Current speed: " << v1.currentSpeed << endl;
+        cout << "\nWhat do you want to do?" << endl;
+        cout << "\t1. Accelerate" << endl;
+        cout << "\t2. Deccelerate" << endl;
+        cout << "\t3. Exit" << endl;
+        cout << "Enter your choice (1-3): ";
+        cin >> choice;
+        if (choice == 1)
+            v1.accelerate();
+        else if (choice == 2)
+            v1.deccelerate();
+        else
+            break;
+    }
+    return 0;
+}

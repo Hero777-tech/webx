@@ -1,0 +1,84 @@
+// program in cpp to add two matrix?
+#include<iostream>
+using namespace std;
+
+void addmx(int matrix1[][100], int matrix2[][100],int result[][100], int row, int cols){
+    for (int i = 0; i <row ; i++)
+    {
+        for (int j = 0; j < cols; j++)
+        {
+            result[i][j] = matrix1[i][j]+matrix2[i][j];
+        }
+        
+    }
+    
+}
+
+void displaydata(int matrix[][100],int row,int col){
+    for (int i = 0; i < row; i++)
+    {
+        for (int j = 0; j < col; j++)
+        {
+            cout<<matrix[i][j]<< " ";
+        }
+        cout<<endl;
+        
+    }
+    
+}
+
+int main(){
+
+    int row;
+    int col;
+    cout<<"Enter row you want: ";
+    cin>>row;
+    cout<<"Enter col you want: ";
+    cin>>col;
+
+    int matrix1[100][100];
+    int matrix2[100][100];
+    int res[100][100];
+
+    //input secton:
+    cout<<"Enter elements of matrix1: " << endl;
+    for (int i = 0; i < row; i++)
+    {
+        for (int j = 0; j < col; j++)
+        {
+            cout<<"Enter element for position ["<<i<<"] and ["<<j<<"] : ";
+            cin>>matrix1[i][j];
+        }
+        
+    }
+
+    cout<<"Enter element for matrix 2: "<<endl;
+
+    for (int i = 0; i < row; i++)
+    {
+        for (int j = 0; j < col; j++)
+        {
+            cout<<"Enter element for the position: ["<<i<<"] and ["<<j<<"] : ";
+            cin>>matrix2[i][j];
+        }
+        
+    }
+
+    //calculation section:
+    addmx(matrix1,matrix2,res,row,col);
+    
+    //matrix 1 output
+    displaydata(matrix1,row,col);
+    cout<<" matrix 1 data------------------------- ";
+    //matrix 2 output
+    displaydata(matrix2,row,col);
+    cout<<" matrix 2 data------------------------- ";
+    //result call
+    displaydata(res,row,col);
+    cout<<" result data--------------------------- ";
+
+
+
+
+    return 0;
+}
